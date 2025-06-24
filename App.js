@@ -19,7 +19,7 @@ export default function App() {
   if (!isLoggedIn) {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>DOC GPT Login</Text>
+        <Text style={styles.title}>DOC-GPT Login</Text>
         <TextInput
           style={styles.input}
           placeholder="Email"
