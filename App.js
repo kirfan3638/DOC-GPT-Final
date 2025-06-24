@@ -7,7 +7,10 @@ export default function App() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
   const handleLogin = () => {
-    if (email === 'doctor@example.com' && password === 'secure123') {
+    if (
+      email.trim().toLowerCase() === 'doctor@example.com' &&
+      password === 'secure123'
+    ) {
       setIsLoggedIn(true);
     } else {
       Alert.alert('Login Failed', 'Invalid credentials');
