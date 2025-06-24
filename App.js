@@ -19,6 +19,20 @@ export default function App() {
 
   const [note, setNote] = React.useState('');
 
+  const saveNote = async () => {
+    try {
+      await fetch('http://localhost:3000/notes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ note, timestamp: new Date().toISOString() }),
+      });
+      Alert.alert('Note Saved', note);
+      setNote('');
+    } catch (err) {
+      Alert.alert('Error', 'Failed to save note');
+    }
+  };
+
   if (!isLoggedIn) {
     return (
       <View style={styles.container}>
@@ -55,7 +69,7 @@ export default function App() {
         onChangeText={setNote}
         value={note}
       />
-      <TouchableOpacity style={styles.button} onPress={() => Alert.alert('Note Saved', note)}>
+      <TouchableOpacity style={styles.button} onPress={saveNote}>
         <Text style={styles.buttonText}>Save Note</Text>
       </TouchableOpacity>
     </View>

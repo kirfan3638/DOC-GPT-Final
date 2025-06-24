@@ -1,0 +1,11 @@
+{
+  "name": "doc-gpt-app",
+  "version": "1.0.0",
+  "main": "App.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-native": "^0.71.8"
+  }
+}
