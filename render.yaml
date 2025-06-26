@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: doc-gpt-api
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    rootDir: backend
+    envVars:
+      - key: NODE_ENV
+        value: production
