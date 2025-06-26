@@ -21,7 +21,7 @@ export default function App() {
 
   const saveNote = async () => {
     try {
-      await fetch('http://localhost:3000/notes', {
+      await fetch('https://doc-gpt-api.onrender.com/api/notes', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ note, timestamp: new Date().toISOString() }),

@@ -31,7 +31,7 @@ This course provides a step-by-step guide for creating a HIPAA-compliant medical
 The `App.js` file contains a simple login screen and a note editor. When a note is saved, it is sent to the backend along with a timestamp.
 
 ```jsx
-await fetch('http://localhost:3000/notes', {
+await fetch('https://doc-gpt-api.onrender.com/api/notes', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ note, timestamp: new Date().toISOString() }),
@@ -42,7 +42,7 @@ Authentication should use secure tokens in production.
 
 ## Backend Walkthrough
 
-The backend (`backend/server.js`) exposes a `/notes` endpoint to receive and store notes. Data should be encrypted and stored in a secure database. This example demonstrates basic functionality; you must implement proper security controls for real deployments.
+The backend (`backend/server.js`) exposes a `/api/notes` endpoint to receive and store notes. Data should be encrypted and stored in a secure database. This example demonstrates basic functionality; you must implement proper security controls for real deployments.
 
 ## AI and Guideline Search
 
