@@ -19,7 +19,7 @@ function saveNotes(notes) {
   fs.writeFileSync(notesFile, JSON.stringify(notes, null, 2));
 }
 
-app.post('/notes', (req, res) => {
+app.post('/api/notes', (req, res) => {
   const { note, timestamp } = req.body;
   if (!note || !timestamp) {
     return res.status(400).json({ error: 'Missing note or timestamp' });
@@ -30,7 +30,7 @@ app.post('/notes', (req, res) => {
   res.json({ status: 'saved' });
 });
 
-app.get('/notes', (req, res) => {
+app.get('/api/notes', (req, res) => {
   const notes = loadNotes();
   res.json(notes);
 });
