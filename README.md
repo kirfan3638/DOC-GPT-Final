@@ -34,3 +34,20 @@ An optional Next.js dashboard with voice controls and AI-powered tools is availa
    ```
 
 The dashboard expects a `NEXT_PUBLIC_OPENAI_API_KEY` environment variable for OpenAI API access.
+
+## Offline Setup
+
+For environments without internet access, a helper script `setup-doc-gpt.sh` is
+provided. Run this script on a machine with internet access to clone the
+repository, install dependencies, and package each `node_modules` directory into
+tar archives.
+
+Transfer the generated archives to your offline machine and extract them in the
+corresponding directories:
+
+```bash
+tar -xzf node_modules-root.tar.gz
+tar -xzf node_modules-backend.tar.gz -C backend
+# Optional dashboard
+tar -xzf node_modules-web.tar.gz -C doc-ikgpt-web
+```
